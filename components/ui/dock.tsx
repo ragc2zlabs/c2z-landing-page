@@ -43,6 +43,7 @@ export function Dock({ items, className, ...props }: DockProps) {
                   ? "scale(0.92)"
                   : "scale(1)",
             }}
+            scroll={true}
           >
             <span
               className={cn(

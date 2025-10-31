@@ -3,6 +3,7 @@ import {
   Brain,
   Briefcase,
   Compass,
+  Link2,
   MessageSquare,
   Mic2,
   PhoneCall,
@@ -21,6 +22,7 @@ import { Marquee } from "@/components/ui/marquee";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
+import Link from "next/link";
 
 const navItems = [
   { label: "Home", href: "#home", icon: <Sparkles className="h-5 w-5" /> },
@@ -36,19 +38,19 @@ const highlightLogos = ["OpenAI Partner", "Azure AI", "Anthropic", "AWS Innovate
 
 const teamMembers = [
   {
-    name: "Jithendra Chowdary",
-    role: "Founder & Chief Architect",
-    bio: "Leading the vision for enterprise-ready AI platforms that are secure, scalable, and humane.",
-  },
-  {
-    name: "Mira Patel",
-    role: "Head of Product",
-    bio: "Translating ambitious business goals into lovable AI experiences across industries.",
-  },
-  {
-    name: "Leon Vargas",
-    role: "Lead ML Engineer",
+    name: "Likhitha",
+    role: "Co-founder",
     bio: "Grounding cutting-edge research into production systems with measurable impact.",
+  },
+  {
+    name: "Rag",
+    role: "Founder",
+    bio: "Driving product vision, growth, and execution to build technology that transforms industries.",
+  },
+  {
+    name: "Khalaf",
+    role: "Co-founder",
+    bio: "Translating ambitious business goals into lovable AI experiences across industries.",
   },
 ];
 
@@ -86,30 +88,34 @@ export default function Home() {
     <main className="relative mx-auto flex min-h-screen max-w-6xl flex-col gap-24 px-4 pb-24 pt-12 sm:px-8">
       <Dock items={navItems} />
 
-      <section id="home" className="mt-20 grid gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <section id="home" className="mt-0 grid gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div className="space-y-6">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-xs uppercase tracking-[0.3em] text-primary">
             <Sparkles className="h-4 w-4" />
             <span>AI Services Crafted for Trust & Speed</span>
           </div>
-          <h1 className="text-4xl font-semibold leading-tight text-foreground sm:text-5xl lg:text-6xl">
+          <h1 className="text-2xl font-semibold leading-tight text-foreground sm:text-5xl lg:text-5xl">
             C2Z Labs helps ambitious teams ship AI products that customers adore.
           </h1>
           <p className="max-w-xl text-lg text-foreground/80">Harness the Power of AI to Drive Innovation and Growth.</p>
           <div className="flex flex-col gap-4 sm:flex-row">
-            <Button className="gap-2 text-base">
-              Talk to an AI specialist
-              <ArrowRight />
-            </Button>
-            <Button variant="outline" className="text-base">
-              Explore our playbooks
-            </Button>
+            <Link href="#contact" scroll={true}>
+              <Button className="gap-2 text-base cursor-pointer">
+                Talk to an AI specialist
+                <ArrowRight />
+              </Button>
+            </Link>
+            <Link href="#products" scroll={true}>
+              <Button variant="outline" className="text-base cursor-pointer">
+                Explore our playbooks
+              </Button>
+            </Link>
           </div>
           <div className="rounded-3xl border border-white/40 bg-white/60 p-5 shadow-[0_25px_80px_-60px_rgba(255,90,76,0.75)] backdrop-blur">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-muted-foreground">
               We deliver outcomes like
             </p>
-            <ul className="mt-4 grid gap-3 text-sm text-foreground/80 sm:grid-cols-2">
+            <ul className="mt-4 grid gap-1 text-sm text-foreground/80 sm:grid-cols-1 font-sans">
               <li>• 35% faster feature delivery with AI-augmented squads</li>
               <li>• 4.8/5 end-user CSAT on enterprise AI rollouts</li>
               <li>• 60% reduction in manual reporting cycles</li>
@@ -168,13 +174,13 @@ export default function Home() {
             engineers to deliver measurable wins in 6-week increments.
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
-            <div className="rounded-2xl border border-border/40 bg-white/80 p-4 text-sm text-foreground/80">
-              <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Industries</p>
-              <p>Fintech, Healthcare, HR Tech, Consumer, and B2B SaaS</p>
+            <div className="rounded-2xl border border-border/40 bg-white/80 p-4 text-sm font-roboto text-foreground/80">
+              <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground font-bold">Industries</p>
+              <p className="text-xs mt-2">Fintech, Healthcare, HR Tech, Consumer, and B2B SaaS</p>
             </div>
-            <div className="rounded-2xl border border-border/40 bg-white/80 p-4 text-sm text-foreground/80">
-              <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Capabilities</p>
-              <p>GenAI strategy, product discovery, ML ops, prompt engineering</p>
+            <div className="rounded-2xl border border-border/40 bg-white/80 p-4 font-roboto text-sm text-foreground/80">
+              <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground font-bold">Capabilities</p>
+              <p className="text-xs mt-2">GenAI strategy, product discovery, ML ops, prompt engineering</p>
             </div>
           </div>
         </div>
@@ -205,7 +211,13 @@ export default function Home() {
       <section id="products" className="space-y-12">
         <div className="space-y-5">
           <p className="text-sm uppercase tracking-[0.36em] text-primary/80">Products</p>
-          <h2 className="text-3xl font-semibold text-foreground sm:text-4xl">Voisely AI</h2>
+
+          <Link href="https://voisely.ai" scroll={false}>
+            <h2 className="text-3xl flex items-center font-semibold text-foreground sm:text-4xl">
+              <Image src="/voisely-logo.png" width={50} height={50} alt="Voisely Logo" />
+              Voisely.AI
+            </h2>
+          </Link>
           <p className="max-w-3xl text-lg text-foreground/80">
             Voisely is the conversational intelligence platform built by C2Z Labs. It answers every call in natural,
             multilingual voices, books orders and reservations, and routes complex requests to your team. Keep your data
@@ -219,15 +231,17 @@ export default function Home() {
             <ul className="space-y-3 text-sm text-foreground/75">
               {productHighlights.map((highlight) => (
                 <li key={highlight} className="flex items-start gap-3">
-                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-primary/70" />
+                  <span className="mt-1 h-2.5 w-2.5 aspect-square rounded-full bg-primary/70" />
                   <span>{highlight}</span>
                 </li>
               ))}
             </ul>
-            <Button className="gap-2">
-              See Voisely in action
-              <Mic2 className="h-4 w-4" />
-            </Button>
+            <Link href="https://voisely.ai" scroll={true}>
+              <Button className="gap-2">
+                See Voisely in action
+                <Mic2 className="h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

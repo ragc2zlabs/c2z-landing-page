@@ -1,28 +1,20 @@
-import {
-  ArrowRight,
-  Briefcase,
-  Globe2,
-  HeartHandshake,
-  Lightbulb,
-  Sparkles,
-  Users,
-} from "lucide-react"
+import { ArrowRight, Briefcase, Globe2, HeartHandshake, Lightbulb, Sparkles, Users } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Dock } from "@/components/ui/dock"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Dock } from "@/components/ui/dock";
 
 const dockItems = [
   { label: "Home", href: "/", icon: <Sparkles className="h-5 w-5" /> },
   { label: "Open Roles", href: "#roles", icon: <Briefcase className="h-5 w-5" /> },
   { label: "Life @ C2Z", href: "#culture", icon: <Users className="h-5 w-5" /> },
   { label: "Apply", href: "#apply", icon: <ArrowRight className="h-5 w-5" /> },
-]
+];
 
 const jobOpenings = [
   {
     title: "Full Stack Developer",
-    location: "Hybrid · Bengaluru, India",
+    location: "Remote · Global",
     type: "Full-time",
     about:
       "Own the end-to-end delivery of AI-powered web applications, partnering closely with product, design, and ML engineers.",
@@ -36,10 +28,9 @@ const jobOpenings = [
   },
   {
     title: "UI/UX Designer",
-    location: "Remote · India",
+    location: "Remote · Global",
     type: "Full-time",
-    about:
-      "Craft intuitive AI experiences that are beautiful, trustworthy, and centered around human outcomes.",
+    about: "Craft intuitive AI experiences that are beautiful, trustworthy, and centered around human outcomes.",
     responsibilities: [
       "Lead discovery workshops to map user journeys and prioritize high-impact AI moments.",
       "Prototype interactive flows using Magic UI + shadcn building blocks for rapid stakeholder feedback.",
@@ -48,7 +39,20 @@ const jobOpenings = [
     qualities: ["Product Discovery", "Design Systems", "Prototyping", "Storytelling"],
     applyHref: "mailto:careers@c2zlabs.com?subject=Application%20-%20UI%2FUX%20Designer",
   },
-]
+  {
+    title: "Backend/AI Engineer",
+    location: "Remote · Global",
+    type: "Full-time",
+    about: "Build scalable backend systems that integrate cutting-edge AI models into reliable, secure services.",
+    responsibilities: [
+      "Develop and maintain microservices in Python/TypeScript that interface with LLMs and vector databases.",
+      "Implement robust data pipelines for training, evaluating, and monitoring AI model performance.",
+      "Collaborate with frontend and MLOps teams to deliver end-to-end AI solutions.",
+    ],
+    qualities: ["Python", "TypeScript", "Microservices", "LLM Integration", "Data Pipelines"],
+    applyHref: "mailto:careers@c2zlabs.com?subject=Application%20-%20Backend%20and%20AI%20Engineer",
+  },
+];
 
 const cultureHighlights = [
   {
@@ -59,17 +63,15 @@ const cultureHighlights = [
   },
   {
     title: "Global collaboration",
-    description:
-      "Teams in Bengaluru and San Francisco sync daily, pairing design, product, ML, and engineering craft.",
+    description: "Teams in Bengaluru and San Francisco sync daily, pairing design, product, ML, and engineering craft.",
     icon: <Globe2 className="h-6 w-6 text-primary" />,
   },
   {
     title: "Human-first AI",
-    description:
-      "We build responsible systems with structured guardrails, accessibility, and measurable customer joy.",
+    description: "We build responsible systems with structured guardrails, accessibility, and measurable customer joy.",
     icon: <HeartHandshake className="h-6 w-6 text-primary" />,
   },
-]
+];
 
 export default function CareersPage() {
   return (
@@ -84,8 +86,8 @@ export default function CareersPage() {
           Shape the future of human-centered AI at C2Z Labs.
         </h1>
         <p className="mx-auto max-w-2xl text-lg text-foreground/80">
-          Join a multidisciplinary crew of builders, designers, and strategists helping ambitious companies
-          ship AI that customers trust. We work in focused squads, pair often, and celebrate thoughtful craft.
+          Join a multidisciplinary crew of builders, designers, and strategists helping ambitious companies ship AI that
+          customers trust. We work in focused squads, pair often, and celebrate thoughtful craft.
         </p>
         <Button asChild className="mx-auto gap-2 text-base">
           <a href="mailto:careers@c2zlabs.com">
@@ -115,9 +117,7 @@ export default function CareersPage() {
                   <CardDescription className="mt-2 text-foreground/70">{job.about}</CardDescription>
                 </div>
                 <div className="flex flex-wrap items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
-                  <span className="rounded-full border border-border/70 bg-white/70 px-3 py-1">
-                    {job.location}
-                  </span>
+                  <span className="rounded-full border border-border/70 bg-white/70 px-3 py-1">{job.location}</span>
                   <span className="rounded-full border border-border/70 bg-white/70 px-3 py-1">{job.type}</span>
                 </div>
               </CardHeader>
@@ -187,12 +187,10 @@ export default function CareersPage() {
         id="apply"
         className="space-y-6 rounded-3xl border border-border/50 bg-white/75 p-8 text-center shadow-[0_35px_100px_-70px_rgba(255,90,76,0.85)] backdrop-blur"
       >
-        <h2 className="text-3xl font-semibold text-foreground sm:text-4xl">
-          Don&apos;t see the perfect fit yet?
-        </h2>
+        <h2 className="text-3xl font-semibold text-foreground sm:text-4xl">Don&apos;t see the perfect fit yet?</h2>
         <p className="mx-auto max-w-2xl text-lg text-foreground/80">
-          We are always eager to meet curious builders who care about crafting responsible, lovable AI.
-          Reach out with your portfolio, repos, or a note about what you want to learn next.
+          We are always eager to meet curious builders who care about crafting responsible, lovable AI. Reach out with
+          your portfolio, repos, or a note about what you want to learn next.
         </p>
         <Button asChild className="mx-auto gap-2 text-base">
           <a href="mailto:careers@c2zlabs.com">
@@ -202,5 +200,5 @@ export default function CareersPage() {
         </Button>
       </section>
     </main>
-  )
+  );
 }
