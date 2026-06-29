@@ -63,7 +63,7 @@ const cultureHighlights = [
   },
   {
     title: "Global collaboration",
-    description: "Teams in Bengaluru and San Francisco sync daily, pairing design, product, ML, and engineering craft.",
+    description: "Teams in Bengaluru and Pleasanton, CA sync daily, pairing design, product, ML, and engineering craft.",
     icon: <Globe2 className="h-6 w-6 text-primary" />,
   },
   {
