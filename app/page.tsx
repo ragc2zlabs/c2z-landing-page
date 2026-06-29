@@ -313,7 +313,7 @@ export default function Home() {
               <Image src="/profile.png" width={40} height={40} alt="Picture of the author" />
               {/* Labs */}
             </p>
-            <p>AI services studio headquartered in San Francisco. Located in Bengaluru & Hyderabad.</p>
+            <p>AI services studio headquartered in Pleasanton, CA. 6701 Koll Center Parkway, Suite 250, Pleasanton, CA 94566. Located in Bengaluru & Hyderabad.</p>
           </div>
           <div className="flex flex-wrap gap-4">
             {navItems.map((item) => (
